@@ -1,0 +1,106 @@
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial}
+body{overflow:hidden}
+
+/* Pantallas completas */
+.pantalla{
+    position:fixed; inset:0;
+    background:black;color:white;
+    display:flex;justify-content:center;align-items:center;
+    z-index:1000;text-align:center;
+    padding:60px 40px 40px 40px;
+}
+.contenido-interno{
+    max-width:600px;
+    width:100%;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:20px;
+    white-space: pre-wrap; /* respeta saltos de línea */
+}
+
+/* Pantalla roja ??? */
+.rojo{background:#b00000}
+.oculto{display:none}
+
+/* Inputs y botones */
+input{padding:16px 22px;border-radius:20px;border:none;font-size:18px;width:100%}
+button{margin-top:20px;padding:16px 30px;border-radius:25px;border:none;cursor:pointer}
+
+/* Cielo */
+.cielo{position:fixed;inset:0;background:linear-gradient(#bde7ff,#ecfbff);padding-top:120px;text-align:center;transition:1.5s}
+.titulo-principal{font-size:44px;color:#2c3e50;margin-top:40px;margin-bottom:50px;margin-left:20px;margin-right:20px}
+.botones{display:flex;justify-content:center;gap:40px;margin-bottom:50px}
+.botones button{background:white;color:#2c3e50;font-weight:bold;font-size:20px;padding:18px 36px;border-radius:30px;box-shadow:0 6px 18px rgba(0,0,0,.2);transition:transform .3s,box-shadow .3s}
+.botones button:hover{transform:scale(1.1);box-shadow:0 10px 24px rgba(0,0,0,.3)}
+.mensaje-boton{margin-top:50px;color:#2c3e50;margin-left:20px;margin-right:20px}
+
+/* Infierno */
+.infierno{position:fixed;inset:0;background:linear-gradient(#1a0006,#4b0015);transform:translateY(100%);transition:1.5s;overflow-y:auto;padding-bottom:150px}
+body.activo .infierno{transform:translateY(0)}
+body.activo .cielo{transform:translateY(-30%)}
+.volver{position:fixed;top:20px;left:20px;background:#c62828;color:white;padding:16px 28px;border-radius:25px}
+
+/* Contenido infierno */
+.contenido, #quiz{
+    margin-top:160px;color:white;text-align:center;gap:25px;
+    padding-left:20px;padding-right:20px;max-width:600px;margin:auto;
+    white-space: pre-wrap;
+}
+.contenido h2{
+    margin-top:40px;
+    font-size:36px;
+    margin-bottom:20px;
+}
+
+/* Corazones */
+.corazones span{position:absolute;top:-20px;color:rgba(255,100,150,.9);animation:caer linear infinite}
+@keyframes caer{to{transform:translateY(120vh) rotate(360deg)}}
+.luminoso{text-shadow:0 0 15px #ff5aa5,0 0 40px white}
+
+/* Quiz */
+#quiz{margin-top:50px;display:flex;flex-direction:column;align-items:center;gap:50px}
+.pregunta{display:flex;flex-direction:column;align-items:center;gap:15px;font-size:22px} /* pregunta arriba, respuestas abajo */
+.pregunta .respuestas{display:flex;gap:20px}
+.pregunta button{margin:0;padding:16px 28px;font-size:18px;border-radius:25px;border:none;cursor:pointer;background:white;color:#2c3e50;transition:box-shadow .4s, transform .2s}
+.pregunta button:hover{transform:scale(1.08)}
+.correcto{box-shadow:0 0 25px 10px #00ff6a}
+.incorrecto{box-shadow:0 0 25px 10px red}
+
+/* Error corazón */
+#errorCorazon{position:fixed;inset:0;background:black;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;z-index:900}
+#errorCorazon.activo{opacity:1}
+#corazon{font-size:140px;color:#ff2f6d;text-shadow:0 0 20px #ff2f6d,0 0 60px #ff5aa5;transition:transform 3s ease, opacity 3s ease}
+.encoger{transform:scale(0);opacity:0}
+
+/* Flash */
+#flash{position:fixed;inset:0;background:white;opacity:0;pointer-events:none;z-index:950}
+#flash.on{opacity:1}
+
+/* ===== Ajustes para móviles ===== */
+@media (max-width: 480px) {
+    .titulo-principal { 
+        font-size: 32px; 
+        margin-top: 20px; 
+        margin-bottom: 30px; 
+    }
+    .contenido-interno { 
+        padding: 40px 20px 20px 20px; 
+    }
+    input, button {
+        font-size: 20px;
+        padding: 18px 24px;
+    }
+    .botones { 
+        flex-direction: column; 
+        gap: 20px; 
+    }
+    .botones button { 
+        width: 100%; 
+    }
+    .contenido { 
+        margin-top: 120px; 
+        padding-left: 15px; 
+        padding-right: 15px; 
+    }
+}

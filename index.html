@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Experiencia</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+<!-- PANTALLA INICIAL -->
+<div id="pantallaInicio" class="pantalla">
+    <div class="contenido-interno">
+        <h1>Bienvenida, ¿tardaste a propósito?</h1>
+        <p>Tu novio te ha proporcionado la palabra que necesitas para entrar, solo piensa en el apodo de la reina de su corazón.</p>
+        <input id="passInicio" type="password">
+        <button id="btnInicio">Entrar</button>
+    </div>
+</div>
+
+<!-- PANTALLA TIEMPO -->
+<div id="pantallaTiempo" class="pantalla oculto">
+    <div class="contenido-interno">
+        <h1>Tiempo</h1>
+        <p>Introduce la contraseña</p>
+        <input id="passTiempo" type="password">
+        <button id="btnTiempo">Entrar</button>
+    </div>
+</div>
+
+<!-- PANTALLA ROJA ??? -->
+<div id="pantallaRoja" class="pantalla rojo oculto">
+    <div class="contenido-interno" id="textoInterrogacion"></div>
+</div>
+
+<!-- CIELO -->
+<section class="cielo">
+    <h1 class="titulo-principal">Los caminos que elegí contigo</h1>
+
+    <div class="botones">
+        <button onclick="abrirVida()">Mía</button>
+        <button onclick="abrirAmor()">Prueba de amor</button>
+        <button onclick="abrirTiempo()">Tiempo</button>
+    </div>
+
+    <div class="mensaje-boton">
+        <h2>Todo para mí</h2>
+        <p style="white-space: pre-wrap;">
+            Hice esto con amor, del que se hace despacio y se queda. Para que, si alguna vez dudas, recuerdes que mi corazón siempre sabe volver a ti. Vuelve aquí cuando lo necesites. Eres mía de la forma más simple y bonita, porque te elijo, incluso sin pensarlo. Y cada vez que lo haga, recordarás que nadie más podría ocupar el lugar que tienes en mí.
+        </p>
+    </div>
+</section>
+
+<!-- INFIERNO -->
+<section class="infierno">
+    <button class="volver" onclick="volver()">Volver</button>
+    <div class="corazones"></div>
+
+    <div id="vida" class="contenido oculto">
+        <h2>Olas que ni poseidon puede detener</h2>
+        <p style="white-space: pre-wrap;">
+            Te amo, incluyendo esos detalles que la gente considera insignificantes, porque para mí todo en ti importa. Cada gesto, cada risa, cada palabra que eliges, incluso los lunares en tu rostro, la manera en que te expresas, tu amor por la literatura y tu sensibilidad, son piezas que te hacen única y que me enamoran cada día más.
+
+            No creo que diéramos miedo cuando Zeus nos separó con un rayo, pero quizá nuestra felicidad le dio tanta envidia que quiso interponerse. Aun así, ni los siglos ni los mares pudieron detenernos. Miles de años después, nos encontramos de nuevo, y ahora sé que nuestro amor podría atravesar galaxias y seguir funcionando, más fuerte que cualquier destino que intente interponerse entre nosotros. 
+
+            Y ahora, cada vez que te miro, siento que nuestro amor es como una chispa que ilumina todo a su alrededor: capaz de encender lo imposible, de desafiar cualquier regla y de transformar cada momento en algo extraordinario. Contigo, todo lo común se vuelve mágico, y cada día se convierte en una aventura que solo nosotros podemos vivir.
+        </p>
+    </div>
+
+    <div id="amor" class="contenido oculto">
+        <h2>Cinco verdades</h2>
+        <p style="white-space: pre-wrap;">
+            Aquí pondré a prueba tu amor, no con promesas ni palabras vacías, sino con recuerdos y verdades que solo nosotros conocemos. Te esperan cinco preguntas, cada una guardando una parte de lo que soy y de lo que hemos construido juntos. Si respondes correctamente, accederás a la clave de lo último que tengo reservado para ti, aquello que he mantenido oculto hasta ahora.
+
+            Pero si fallas, no habrá reproches ni explicaciones. Solo verás cómo mi corazón comienza a desvanecerse lentamente, consumido por la oscuridad del olvido, hasta quedar enterrado para siempre en un lugar donde ya no llegan las palabras ni los recuerdos. Por eso elijo cuidarte siempre, proteger lo nuestro y no dejar que nada apague lo que sentimos, porque tu amor es lo más valioso que tengo y no pienso perderlo jamás.
+        </p>
+        <div id="quiz"></div>
+        <p id="clave" class="oculto">Contraseña: <b>ILoveYouNoni</b></p>
+    </div>
+
+    <div id="tiempo" class="contenido oculto">
+        <h2>Que el tiempo revele sus secretos</h2>
+        <p style="white-space: pre-wrap;">
+            Dicen que el tiempo es el regalo más valioso que uno puede ofrecer, y no puedo estar más de acuerdo. Cada llamada, cada mensaje, cada momento compartido, cada risa y cada silencio que hemos vividos juntos, está tejido con él, nuestro tiempo, que se convierte en la prueba más hermosa de lo que somos. Desearía poder vivir cientos de años solo para pasar cada uno contigo, descubriéndote de nuevo, aprendiendo tus secretos, riendo hasta que el mundo desaparezca, sosteniéndote incluso en los días más grises. Pero la vida es efímera y caprichosa, y aunque no pueda regalarte la eternidad, puedo asegurarte que mientras respire, cada latido, cada pensamiento y cada gesto mío estará dedicado a ti.
+
+            No sé qué nos depara el futuro, pero tengo la certeza de que todo lo que vivamos será intenso, sincero y profundo, porque el amor que nos une es inmenso y absoluto. Seremos felices de formas que nadie podría imaginar, enfrentando juntos lo que venga, porque cada obstáculo solo hará que te valore más, que mi deseo de estar contigo crezca y que mi corazón insista en encontrarte cada vez que me pierda. Todo lo que soy y todo lo que seré, todo mi tiempo y cada instante de mi vida, será para ti… y aunque los años pasen y el mundo cambie, seguiré eligiéndote, amándote y reclamándote con cada fibra de mi ser.
+
+            Y ahora dime, amor, ¿estarías dispuesta a elegirnos cada día, incluso cuando el camino se vuelva difícil, a cuidar lo nuestro con el mismo amor con el que yo te entrego mi tiempo y a caminar conmigo, pase lo que pase?
+        </p>
+    </div>
+</section>
+
+<!-- ERROR CORAZÓN -->
+<div id="errorCorazon">
+    <div id="corazon">❤</div>
+</div>
+
+<!-- FLASH -->
+<div id="flash"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
