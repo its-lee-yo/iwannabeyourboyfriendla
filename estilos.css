@@ -1,106 +1,173 @@
-*{margin:0;padding:0;box-sizing:border-box;font-family:Arial}
-body{overflow:hidden}
-
-/* Pantallas completas */
-.pantalla{
-    position:fixed; inset:0;
-    background:black;color:white;
-    display:flex;justify-content:center;align-items:center;
-    z-index:1000;text-align:center;
-    padding:60px 40px 40px 40px;
-}
-.contenido-interno{
-    max-width:600px;
-    width:100%;
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    gap:20px;
-    white-space: pre-wrap; /* respeta saltos de línea */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-/* Pantalla roja ??? */
-.rojo{background:#b00000}
-.oculto{display:none}
-
-/* Inputs y botones */
-input{padding:16px 22px;border-radius:20px;border:none;font-size:18px;width:100%}
-button{margin-top:20px;padding:16px 30px;border-radius:25px;border:none;cursor:pointer}
-
-/* Cielo */
-.cielo{position:fixed;inset:0;background:linear-gradient(#bde7ff,#ecfbff);padding-top:120px;text-align:center;transition:1.5s}
-.titulo-principal{font-size:44px;color:#2c3e50;margin-top:40px;margin-bottom:50px;margin-left:20px;margin-right:20px}
-.botones{display:flex;justify-content:center;gap:40px;margin-bottom:50px}
-.botones button{background:white;color:#2c3e50;font-weight:bold;font-size:20px;padding:18px 36px;border-radius:30px;box-shadow:0 6px 18px rgba(0,0,0,.2);transition:transform .3s,box-shadow .3s}
-.botones button:hover{transform:scale(1.1);box-shadow:0 10px 24px rgba(0,0,0,.3)}
-.mensaje-boton{margin-top:50px;color:#2c3e50;margin-left:20px;margin-right:20px}
-
-/* Infierno */
-.infierno{position:fixed;inset:0;background:linear-gradient(#1a0006,#4b0015);transform:translateY(100%);transition:1.5s;overflow-y:auto;padding-bottom:150px}
-body.activo .infierno{transform:translateY(0)}
-body.activo .cielo{transform:translateY(-30%)}
-.volver{position:fixed;top:20px;left:20px;background:#c62828;color:white;padding:16px 28px;border-radius:25px}
-
-/* Contenido infierno */
-.contenido, #quiz{
-    margin-top:160px;color:white;text-align:center;gap:25px;
-    padding-left:20px;padding-right:20px;max-width:600px;margin:auto;
-    white-space: pre-wrap;
-}
-.contenido h2{
-    margin-top:40px;
-    font-size:36px;
-    margin-bottom:20px;
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f0f0f0;
+    color: #222;
+    padding: 15px;
+    max-width: 800px;
+    margin: auto;
 }
 
-/* Corazones */
-.corazones span{position:absolute;top:-20px;color:rgba(255,100,150,.9);animation:caer linear infinite}
-@keyframes caer{to{transform:translateY(120vh) rotate(360deg)}}
-.luminoso{text-shadow:0 0 15px #ff5aa5,0 0 40px white}
+header {
+    background: #1a2a3a;
+    color: white;
+    padding: 20px 10px;
+    text-align: center;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
 
-/* Quiz */
-#quiz{margin-top:50px;display:flex;flex-direction:column;align-items:center;gap:50px}
-.pregunta{display:flex;flex-direction:column;align-items:center;gap:15px;font-size:22px} /* pregunta arriba, respuestas abajo */
-.pregunta .respuestas{display:flex;gap:20px}
-.pregunta button{margin:0;padding:16px 28px;font-size:18px;border-radius:25px;border:none;cursor:pointer;background:white;color:#2c3e50;transition:box-shadow .4s, transform .2s}
-.pregunta button:hover{transform:scale(1.08)}
-.correcto{box-shadow:0 0 25px 10px #00ff6a}
-.incorrecto{box-shadow:0 0 25px 10px red}
+header h1 {
+    font-size: 1.8rem;
+}
 
-/* Error corazón */
-#errorCorazon{position:fixed;inset:0;background:black;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;z-index:900}
-#errorCorazon.activo{opacity:1}
-#corazon{font-size:140px;color:#ff2f6d;text-shadow:0 0 20px #ff2f6d,0 0 60px #ff5aa5;transition:transform 3s ease, opacity 3s ease}
-.encoger{transform:scale(0);opacity:0}
+header p {
+    font-size: 1rem;
+    opacity: 0.8;
+    margin-top: 5px;
+}
 
-/* Flash */
-#flash{position:fixed;inset:0;background:white;opacity:0;pointer-events:none;z-index:950}
-#flash.on{opacity:1}
+.namen {
+    font-size: 1.1rem;
+    font-weight: bold;
+    opacity: 1;
+    margin-top: 8px;
+    color: #f1c40f;
+}
 
-/* ===== Ajustes para móviles ===== */
-@media (max-width: 480px) {
-    .titulo-principal { 
-        font-size: 32px; 
-        margin-top: 20px; 
-        margin-bottom: 30px; 
-    }
-    .contenido-interno { 
-        padding: 40px 20px 20px 20px; 
-    }
-    input, button {
-        font-size: 20px;
-        padding: 18px 24px;
-    }
-    .botones { 
-        flex-direction: column; 
-        gap: 20px; 
-    }
-    .botones button { 
-        width: 100%; 
-    }
-    .contenido { 
-        margin-top: 120px; 
-        padding-left: 15px; 
-        padding-right: 15px; 
-    }
+#intro {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+#intro h2 {
+    color: #1a2a3a;
+    border-bottom: 2px solid #1a2a3a;
+    padding-bottom: 8px;
+    margin-bottom: 10px;
+    font-size: 1.3rem;
+}
+
+#intro p {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.kapitel {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    border-left: 5px solid #1a2a3a;
+}
+
+.kapitel h2 {
+    color: #1a2a3a;
+    font-size: 1.4rem;
+    margin-bottom: 5px;
+}
+
+.lema {
+    background: #1a2a3a;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    display: inline-block;
+    margin: 8px 0 12px 0;
+}
+
+.kapitel h3 {
+    color: #333;
+    margin: 15px 0 6px 0;
+    font-size: 1rem;
+}
+
+.kapitel ul, .kapitel ol {
+    padding-left: 20px;
+    margin: 6px 0;
+}
+
+.kapitel li {
+    margin: 5px 0;
+    line-height: 1.4;
+}
+
+.beispiele {
+    display: flex;
+    gap: 15px;
+    margin-top: 12px;
+    flex-wrap: wrap;
+}
+
+.schlecht, .gut {
+    flex: 1;
+    min-width: 150px;
+    padding: 10px;
+    border-radius: 6px;
+}
+
+.schlecht {
+    background: #fde8e8;
+    border-left: 3px solid #e74c3c;
+}
+
+.gut {
+    background: #e8f8ed;
+    border-left: 3px solid #2ecc71;
+}
+
+.schlecht h4 { color: #c0392b; }
+.gut h4 { color: #27ae60; }
+
+.schlecht h4, .gut h4 {
+    margin-bottom: 5px;
+    font-size: 0.95rem;
+}
+
+.schlecht p, .gut p {
+    font-size: 0.95rem;
+}
+
+footer {
+    background: #1a2a3a;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    border-radius: 8px;
+    margin-top: 15px;
+}
+
+footer p {
+    margin: 3px 0;
+    font-size: 0.95rem;
+}
+
+button {
+    background: #3498db;
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    font-size: 1rem;
+    border-radius: 25px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button:hover {
+    background: #2980b9;
+}
+
+#unterschrift {
+    margin-top: 10px;
+    font-weight: bold;
+    color: #f1c40f;
 }
